@@ -71,7 +71,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:9528',
     'http://localhost:5000',    
-    'http://chinook-poc-ui-master.herokuapp.com'
+    'https://chinook-poc-ui-master.herokuapp.com'
 )
 
 TEMPLATES = [
