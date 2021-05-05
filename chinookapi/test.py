@@ -9,6 +9,12 @@ from rest_framework.test import APIClient
 import json
 
 
+#DEBUG = True
+
+#def log(s):
+    #if DEBUG:
+        #print(s)
+
 TrackArray = [dict(id=1, album=1, album_title="For Those About To Rock We Salute You",
                    name="For Those About To Rock (We Salute You)", media_type=1, media_name="MPEG audio file", genre=1,
                    genre_name="Rock", composer="Angus Young, Malcolm Young, Brian Johnson", milliseconds=343719,
@@ -43,9 +49,11 @@ class TestTrack(APITestCase):
         self.userHelper = SetUserHelper(SetupUser.ADMIN)
 
         username, password, email = self.userHelper.getUserPasswordEmail()
+       
+        
         User.objects.create_user(
             username, email, password)
-        self.user1 = User.objects.create_user(username="admin")
+        # self.user1 = User.objects.create_user(username="admin")
 
         self.client = APIClient()
         self.client.login(username=username, password=password)
@@ -69,11 +77,14 @@ class TestTrack(APITestCase):
     def test_PostRequest(self):
         # return PostRequest_RisksDict[self.getPayloadKey()]
         username, password = self.userHelper.getUserPassword()
+        #log(username)
+        #log(password)
         self.client.login(username=username, password=password)
         # response = self.client.get('/tracks/?risk_type_name=Automobile',
         response = self.client.get('/tracks/', format='json')
         # response = self.view(request)
         # print(json.dumps(response.data))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        # log(len(response.data["results"]))
+        self.assertEqual(len(response.data["results"]), 1)
         self.assertTrue(response, TrackArray)
