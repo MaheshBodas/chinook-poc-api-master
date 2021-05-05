@@ -6,7 +6,7 @@ Source code for the [DJango REST API based on chinook schema][server].
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/MaheshBodas/chinook-poc-api-master)
 
 
 DJango REST based API based on Chinook database
