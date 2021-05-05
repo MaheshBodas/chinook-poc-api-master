@@ -104,7 +104,7 @@ DATABASES_Heroku_test = {
 }
 
 
-DATABASES = {
+DATABASES_Local = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
@@ -116,7 +116,7 @@ DATABASES = {
 }
 
 
-DATABASES_Docker = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
